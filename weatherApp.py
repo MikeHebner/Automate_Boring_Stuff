@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 import requests
 
-
+# Takes in userInput and inserts it into the url for api request.
 def getData(userInput):
     APPID = 'da055e0fdcebcdd212402b9b81768fab'
     url = 'https://api.openweathermap.org/data/2.5/weather?zip={zipCode}&APPID={appid}'
@@ -9,7 +9,8 @@ def getData(userInput):
     r = requests.get(url).json()
     return r
 
-
+# By default, temperature is returned in Kelvin.
+# Function converts it into Fahrenheit.
 def convertTemp(kTemp):
     fTemp = ((kTemp - 273.15) * (9 / 5) + 32)
     fTemp = round(fTemp, 2)
