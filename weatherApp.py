@@ -54,11 +54,10 @@ iconImageResponse = requests.get(iconUrl)
 
 iconImage = sg.Image(data=iconImageResponse.content)
 
-print(weather_main)
 layout2 = [[sg.Text("Currently in " + name), sg.Text(description.capitalize())],
            [sg.Text('Temperature: ' + str(temp)), iconImage],
            [sg.Text('Real Feel: ' + str(feels_like))],
-           [sg.Text('High: ' + str(temp_min)), sg.Text('Low: ' + str(temp_max))],
+           [sg.Text('Low: ' + str(temp_min)), sg.Text('High: ' + str(temp_max))],
            [sg.Text('Humidity: ' + str(humidity) + '%')],
            [sg.Text('Air Pressure: ' + str(pressure) + ' hPa')],
            [sg.Text('Cloudiness: ' + str(clouds) + '%')]
@@ -66,5 +65,4 @@ layout2 = [[sg.Text("Currently in " + name), sg.Text(description.capitalize())],
 
 window2 = sg.Window('Current Weather', layout2)
 window2.read()
-x = sg.theme_list()
-print(x)
+
